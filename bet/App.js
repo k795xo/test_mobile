@@ -12,9 +12,9 @@ import {SafeAreaView, StatusBar} from 'react-native';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react'
 
-import {store, persistor} from './src/store';
+import {store, persistor} from 'bet/src/store';
 
-import Screen from './src/containers/home/Screen';
+import Screen from 'bet/src/containers/home/Screen';
 
 
 const App: () => React$Node = () => {
@@ -22,10 +22,7 @@ const App: () => React$Node = () => {
     <>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <StatusBar barStyle="dark-content"/>
-          <SafeAreaView>
             <Screen />
-          </SafeAreaView>
         </PersistGate>
       </Provider>
     </>
